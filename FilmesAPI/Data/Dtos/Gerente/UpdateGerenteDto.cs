@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using FilmesAPI.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace FilmesApi.Data.Dtos.Gerente
 {

@@ -3,6 +3,7 @@ using FilmesApi.Data.Dtos.Gerente;
 using FilmesApi.Models;
 using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
+using System.Linq;
 
 namespace FilmesApi.Profiles
 {
@@ -11,7 +12,10 @@ namespace FilmesApi.Profiles
         public GerenteProfile()
         {
             CreateMap<CreateGerenteDto, Gerente>();
-            CreateMap<Gerente, ReadGerenteDto>();
+            CreateMap<Gerente, ReadGerenteDto>()
+                .ForMember(gerente => gerente.Cinemas, opts => opts
+                .MapFrom(gerente => gerente.Cinemas.Select
+                (c=> new { c.Id, c.Nome, c.Endereco})));
             CreateMap<UpdateGerenteDto, Gerente>();
         }
     }
