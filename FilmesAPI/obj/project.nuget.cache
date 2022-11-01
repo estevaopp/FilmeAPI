@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lVTRbdxM/iikWivqmBI7eKA4hhIBSp3trCnHLV1PfTzFtM3gT9i222JkGwnBtL/tBns2florbKJel4myIGRTkw==",
+  "dgSpecHash": "BDDVdIsMIvTLkYYqd96uAj+i2sA6NnWK7RdETgERwhH7axM3lj65O5NezNau6+c8S43xThUTCB6Wun+Ia1l40Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\FilmesApi.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\estev\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\estev\\.nuget\\packages\\bouncycastle.netcore\\1.8.5\\bouncycastle.netcore.1.8.5.nupkg.sha512",
     "C:\\Users\\estev\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
+    "C:\\Users\\estev\\.nuget\\packages\\fluentresults\\2.5.0\\fluentresults.2.5.0.nupkg.sha512",
     "C:\\Users\\estev\\.nuget\\packages\\google.protobuf\\3.14.0\\google.protobuf.3.14.0.nupkg.sha512",
     "C:\\Users\\estev\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\estev\\.nuget\\packages\\k4os.compression.lz4\\1.1.11\\k4os.compression.lz4.1.1.11.nupkg.sha512",
