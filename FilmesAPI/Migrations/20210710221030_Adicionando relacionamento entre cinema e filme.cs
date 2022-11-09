@@ -4,7 +4,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace FilmesApi.Migrations
 {
-    public partial class CriandoerelacionandoSessoescomfilmeecinema : Migration
+    public partial class Adicionandorelacionamentoentrecinemaefilme : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,9 +14,9 @@ namespace FilmesApi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    CinemaId = table.Column<int>(type: "int", nullable: false),
                     FilmeId = table.Column<int>(type: "int", nullable: false),
-                    HorarioDeInicio = table.Column<DateTime>(type: "datetime", nullable: false)
+                    CinemaId = table.Column<int>(type: "int", nullable: false),
+                    HorarioDeEncerramento = table.Column<DateTime>(type: "datetime", nullable: false)
                 },
                 constraints: table =>
                 {

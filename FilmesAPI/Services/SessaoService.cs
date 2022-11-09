@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
-using FilmesApi.Data.Dtos.Sessao;
 using FilmesApi.Data;
+using FilmesApi.Data.Dtos.Sessao;
 using FilmesApi.Models;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Services
 {
@@ -31,6 +34,7 @@ namespace FilmesApi.Services
             if (sessao != null)
             {
                 ReadSessaoDto sessaoDto = _mapper.Map<ReadSessaoDto>(sessao);
+
                 return sessaoDto;
             }
             return null;

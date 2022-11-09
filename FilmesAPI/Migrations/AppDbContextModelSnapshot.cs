@@ -98,7 +98,6 @@ namespace FilmesApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -118,7 +117,7 @@ namespace FilmesApi.Migrations
                     b.Property<int>("FilmeId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("HorarioDeInicio")
+                    b.Property<DateTime>("HorarioDeEncerramento")
                         .HasColumnType("datetime");
 
                     b.HasKey("Id");

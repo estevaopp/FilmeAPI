@@ -2,11 +2,11 @@
 using FilmesApi.Data;
 using FilmesAPI.Data.Dtos;
 using FilmesAPI.Models;
-using Microsoft.AspNetCore.Mvc;
 using FluentResults;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Services
 {
@@ -29,23 +29,35 @@ namespace FilmesApi.Services
             return _mapper.Map<ReadFilmeDto>(filme);
         }
 
-        public List<ReadFilmeDto> RecuperaFilmes(int ClassificacaoEtaria = 18)
+        public List<ReadFilmeDto> RecuperaFilmes(int? classificacaoEtaria)
         {
-            List<Filme> filmeList = _context.Filmes.Where(f => f.ClassificacaoEtaria >= ClassificacaoEtaria).ToList();
-            if (filmeList == null)
+            List<Filme> filmes;
+            if (classificacaoEtaria == null)
             {
-                return null;
+                filmes = _context.Filmes.ToList();
+            }
+            else
+            {
+                filmes = _context
+                .Filmes.Where(filme => filme.ClassificacaoEtaria <= classificacaoEtaria).ToList();
             }
 
-            return _mapper.Map<List<ReadFilmeDto>>(filmeList);
+            if (filmes != null)
+            {
+                List<ReadFilmeDto> readDto = _mapper.Map<List<ReadFilmeDto>>(filmes);
+                return readDto;
+            }
+            return null;
         }
 
         public ReadFilmeDto RecuperaFilmesPorId(int id)
         {
             Filme filme = _context.Filmes.FirstOrDefault(filme => filme.Id == id);
             if (filme != null)
-            {                
-                return _mapper.Map<ReadFilmeDto>(filme);
+            {
+                ReadFilmeDto filmeDto = _mapper.Map<ReadFilmeDto>(filme);
+
+                return filmeDto;
             }
             return null;
         }

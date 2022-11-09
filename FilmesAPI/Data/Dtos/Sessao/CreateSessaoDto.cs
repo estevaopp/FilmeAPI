@@ -1,6 +1,7 @@
-﻿using FilmesAPI.Models;
-using System.ComponentModel.DataAnnotations;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FilmesApi.Data.Dtos.Sessao
 {
@@ -8,6 +9,6 @@ namespace FilmesApi.Data.Dtos.Sessao
     {
         public int CinemaId { get; set; }
         public int FilmeId { get; set; }
-        public DateTime HorarioDeInicio { get; set; }
+        public DateTime HorarioDeEncerramento { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace FilmesApi.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "text", nullable: false)
+                    Nome = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

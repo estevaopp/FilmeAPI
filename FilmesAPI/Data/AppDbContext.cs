@@ -10,29 +10,29 @@ namespace FilmesApi.Data
         {
 
         }
-        protected override void  OnModelCreating(ModelBuilder builder)
+
+        protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Endereco>()
                 .HasOne(endereco => endereco.Cinema)
                 .WithOne(cinema => cinema.Endereco)
-                .HasForeignKey<Cinema>(cinema=>cinema.EnderecoId);
-                //.IsRequired(false); //Permitir que os campos EnderecoId tenham valor nulo
+                .HasForeignKey<Cinema>(cinema => cinema.EnderecoId);
 
             builder.Entity<Cinema>()
                 .HasOne(cinema => cinema.Gerente)
                 .WithMany(gerente => gerente.Cinemas)
                 .HasForeignKey(cinema => cinema.GerenteId);
-            //.OnDelete(DeleteBehavior.Restrict); //Não permitir a deleção de campos com dependencias
 
             builder.Entity<Sessao>()
                 .HasOne(sessao => sessao.Filme)
                 .WithMany(filme => filme.Sessoes)
-                .HasForeignKey(filme => filme.FilmeId);
+                .HasForeignKey(sessao => sessao.FilmeId);
 
             builder.Entity<Sessao>()
                 .HasOne(sessao => sessao.Cinema)
                 .WithMany(cinema => cinema.Sessoes)
                 .HasForeignKey(sessao => sessao.CinemaId);
+
         }
 
         public DbSet<Filme> Filmes { get; set; }
@@ -40,6 +40,5 @@ namespace FilmesApi.Data
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Gerente> Gerentes { get; set; }
         public DbSet<Sessao> Sessoes { get; set; }
-
     }
 }
