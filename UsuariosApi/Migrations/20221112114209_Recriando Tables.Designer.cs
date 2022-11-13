@@ -9,8 +9,8 @@ using UsuariosApi.Data;
 namespace UsuariosApi.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20210806002040_Criando usuario")]
-    partial class Criandousuario
+    [Migration("20221112114209_Recriando Tables")]
+    partial class RecriandoTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -158,10 +158,10 @@ namespace UsuariosApi.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("text");
@@ -197,10 +197,10 @@ namespace UsuariosApi.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(767)");
+                        .HasColumnType("varchar(256)");
 
                     b.Property<string>("Value")
                         .HasColumnType("text");
