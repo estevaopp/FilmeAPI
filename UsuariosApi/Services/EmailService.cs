@@ -1,4 +1,5 @@
 ﻿using MailKit.Net.Smtp;
+using Microsoft.Extensions.Configuration;
 using MimeKit;
 using System;
 using UsuariosApi.Models;
@@ -7,6 +8,12 @@ namespace UsuariosApi.Services
 {
     public class EmailService
     {
+        private IConfiguration _configuration;
+
+        public EmailService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
         public void EnviarEmail(string[] emailDestinatario, string assunto,int UsuarioId, string codigoDeAtivacao)
         {
             Mensagem mensagem = new Mensagem(emailDestinatario, assunto, UsuarioId, codigoDeAtivacao);
@@ -20,8 +27,11 @@ namespace UsuariosApi.Services
             {
                 try
                 {
-                    client.Connect("conexão a fazer");
-                    //Configurar provedor de email
+                    client.Connect(_configuration.GetValue<string>("EmailSettings:SmtpServer"),
+                        _configuration.GetValue<int>("EmailSettings:Port"), true);
+                    client.AuthenticationMechanisms.Remove("XOUATH2");
+                    client.Authenticate(_configuration.GetValue<string>("EmailSettings:From"),
+                        _configuration.GetValue<string>("EmailSettings:Password"));                    
                     client.Send(mensagemDeEmail);
                 }
                 catch
@@ -39,12 +49,12 @@ namespace UsuariosApi.Services
         private MimeMessage CriaCorpoDoEmail(Mensagem mensagem)
         {
             var mensagemDeEmail = new MimeMessage();
-            mensagemDeEmail.From.Add(new MailboxAddress("Adicionar remetente"));
+            mensagemDeEmail.From.Add(new MailboxAddress(_configuration.GetValue<string>("EmailSettings:From")));
             mensagemDeEmail.To.AddRange(mensagem.Destinatario);
             mensagemDeEmail.Subject = mensagem.Assunto;
             mensagemDeEmail.Body = new TextPart(MimeKit.Text.TextFormat.Text)
             {
-                Text = mensagem.Assunto
+                Text = mensagem.Conteudo
             };
 
             return mensagemDeEmail;
