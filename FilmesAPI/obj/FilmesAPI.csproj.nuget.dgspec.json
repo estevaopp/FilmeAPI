@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\FilmesApi.csproj": {}
+    "C:\\Users\\Estêvão\\Desktop\\GitHub\\FilmeAPI\\FilmesApi\\FilmesApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\FilmesApi.csproj": {
+    "C:\\Users\\Estêvão\\Desktop\\GitHub\\FilmeAPI\\FilmesApi\\FilmesApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\FilmesApi.csproj",
+        "projectUniqueName": "C:\\Users\\Estêvão\\Desktop\\GitHub\\FilmeAPI\\FilmesApi\\FilmesApi.csproj",
         "projectName": "FilmesApi",
-        "projectPath": "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\FilmesApi.csproj",
-        "packagesPath": "C:\\Users\\estev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\estev\\Desktop\\FilmeAPI\\FilmesApi\\obj\\",
+        "projectPath": "C:\\Users\\Estêvão\\Desktop\\GitHub\\FilmeAPI\\FilmesApi\\FilmesApi.csproj",
+        "packagesPath": "C:\\Users\\Estêvão\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Estêvão\\Desktop\\GitHub\\FilmeAPI\\FilmesApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\estev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Estêvão\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
